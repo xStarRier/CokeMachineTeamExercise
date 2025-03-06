@@ -8,7 +8,7 @@ function buyCoke() {
 
     let changeAmount = insertedMoney - 25;
     cokesInStore--;
-    coinsReturned = createChangeArray(changeAmount);
+    coinsReturned = calculateChangeAmount(changeAmount);
     coinsInserted = [0, 0, 0, 0];
     if (cokesInStore == 0) { errorMessage = "SOLD OUT!" }
     updateView();
@@ -16,7 +16,7 @@ function buyCoke() {
 }
 
 function checkDisabledButtons() {
-    if (canIbuyCola()) { setButtonDisabled("buyButton"); }
+    if (canBuyCoke()) { setButtonDisabled("buyButton"); }
     if (isCokeInDelivery == false) { setButtonDisabled("takeColaButton"); }
     if (valueFromCoinCounts(coinsInserted) == 0) { setButtonDisabled("returnCoinsButton"); }
     if (valueFromCoinCounts(coinsReturned) == 0) { setButtonDisabled("takeCoinsButton"); }
@@ -26,7 +26,7 @@ function setButtonDisabled(buttonId) {
     document.getElementById(buttonId).setAttribute("disabled", "true");
 }
 
-function canIbuyCola() {
+function canBuyCoke() {
     if (valueFromCoinCounts(coinsInserted) <= 24 || cokesInStore <= 0 || isCokeInDelivery == true)
 
         return true;
@@ -35,17 +35,17 @@ function canIbuyCola() {
         return false;
 }
  
-function createChangeArray(changeAmount) {
+function calculateChangeAmounts(changeAmount) {
     let 
-        changeArray = [0, 0, 0, 0];
+        changeAmounts = [0, 0, 0, 0];
     for (let i = 3; i >= 0; i--) {
         while (changeAmount >= coinValueFromIndex(i) && coinsInMachine[i] > 0) {
-            changeArray[i]++;
+            changeAmounts[i]++;
             changeAmount -= coinValueFromIndex(i);
             coinsInMachine[i]--;
     }}
 
-    return changeArray;
+    return changeAmounts;
 }
 
 function insertCoin(value) {
