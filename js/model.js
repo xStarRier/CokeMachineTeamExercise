@@ -19,3 +19,4 @@ let coinsReturned = [
 let cokesInStore = 10;
 let isCokeInDelivery = false;
 let errorMessage = '';
+let boughtCokeBottles = 0;
