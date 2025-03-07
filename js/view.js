@@ -3,7 +3,7 @@ function updateView() {
         <div class="flexVertical">
             <div class="flexHorizontal">
                 <div class="automat">
-                    <h1>Cola-automat - pris: 25kr</h1>
+                    <h1> Coca Cola-automat - pris: 25kr</h1>
                     <div class="innmat">
                         ${getCoinsHtml(coinsInMachine)}
                         <div class="cokes">
@@ -38,10 +38,10 @@ function updateView() {
                 
                 
                 <div class="flexHorizontal">
-                    <button onclick="insertCoin(1)">Putte inn 1kr</button>
-                    <button onclick="insertCoin(5)">Putte inn 5kr</button>
-                    <button onclick="insertCoin(10)">Putte inn 10kr</button>
-                    <button onclick="insertCoin(20)">Putte inn 20kr</button>
+                             <button onclick="insertCoin(1)"><img src="img/1kr.png" style="width: 50px; height: 50px;cursor: pointer;"> </button>
+                    <button onclick="insertCoin(5)"><img src="img/5kr.png" style="width: 50px; height: 50px; cursor: pointer; "></button>
+                    <button onclick="insertCoin(10)"><img src="img/10kr.png" style="width: 50px; height: 50px;cursor: pointer;"></button>
+                    <button onclick="insertCoin(20)"><img src="img/20kr.png" style="width: 50px; height: 50px;cursor: pointer;"></button>
                     <button id= "returnCoinsButton" onclick="returnCoins()">Angre</button>
                     <button id= "takeCoinsButton" onclick="takeCoins()">Ta myntene</button>
                     <button id= "buyButton" onclick="buyCoke()">Kjøpe cola</button>

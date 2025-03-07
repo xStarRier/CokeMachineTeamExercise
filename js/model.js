@@ -20,3 +20,4 @@ let cokesInStore = 10;
 let isCokeInDelivery = false;
 let errorMessage = '';
 let boughtCokeBottles = 0;
+let priceofcoke = 25;
